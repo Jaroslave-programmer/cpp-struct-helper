@@ -1,0 +1,44 @@
+{
+  "name": "cpp-struct-helper",
+  "displayName": "CppStructHelper",
+  "description": "Плагин для генерации C++ классов, управляющих блоков и Header Guards",
+  "version": "1.0.0",
+  "author": "Самгин Ярослав Павлович",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onCommand:cpp-struct-helper.generateClass",
+    "onCommand:cpp-struct-helper.generateControlBlock",
+    "onCommand:cpp-struct-helper.addHeaderGuard"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cpp-struct-helper.generateClass",
+        "title": "CppHelper: Сгенерировать C++ класс по списку полей"
+      },
+      {
+        "command": "cpp-struct-helper.generateControlBlock",
+        "title": "CppHelper: Сгенерировать управляющий блок (for / switch-case)"
+      },
+      {
+        "command": "cpp-struct-helper.addHeaderGuard",
+        "title": "CppHelper: Обернуть файл в Header Guard (#ifndef)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cpp-struct-helper.generateClass",
+        "key": "ctrl+alt+g",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cpp-struct-helper.generateControlBlock",
+        "key": "ctrl+alt+b",
+        "when": "editorTextFocus"
+      }
+    ]
+  }
+}
